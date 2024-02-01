@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  AppServerInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0277155c3f0ab2930
+      InstanceType: t2.micro
+      Tags:
+        - Key: wiltonInstance-bucket
+          Value: ExampleAppServerInstance
+
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: theroot-wilton-bucket
+Outputs: {}
